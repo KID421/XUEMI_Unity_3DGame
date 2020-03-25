@@ -1494,9 +1494,10 @@ GameObject:
   - component: {fileID: 920033519}
   - component: {fileID: 920033518}
   - component: {fileID: 920033517}
+  - component: {fileID: 920033521}
   m_Layer: 0
   m_Name: "\u5730\u677F"
-  m_TagString: Untagged
+  m_TagString: "\u5931\u6557\u5340\u57DF"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1575,6 +1576,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &920033521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920033516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &990656678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,7 +1790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1457814, g: 0.21184814, b: 0.26415092, a: 1}
+  m_Color: {r: 0.1457814, g: 0.21184814, b: 0.26415092, a: 0.78431374}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2488,11 +2502,17 @@ MonoBehaviour:
   pointShake: {fileID: 185205960}
   pointShakeRig: {fileID: 185205959}
   houses:
-  - {fileID: 9096967193401724487, guid: 8ba68a8d077afde4285a9942e4fc6aa0, type: 3}
+  - {fileID: 8453611640197947882, guid: 32d50f3dac5389945884b2a27b77d51c, type: 3}
   - {fileID: 7895023298875460092, guid: 8c832133e22af8041a19874d588369bd, type: 3}
   - {fileID: 9096967193401724487, guid: 8ba68a8d077afde4285a9942e4fc6aa0, type: 3}
   shakePower: 2
   myCamera: {fileID: 705449617}
+  checkWall: {fileID: 2456561169514279841, guid: 0509b09fb1d27d148bf9e50b74646661,
+    type: 3}
+  final: {fileID: 1094872391}
+  textHouseCount: {fileID: 549091771}
+  textBest: {fileID: 456420091}
+  textCurrent: {fileID: 479616778}
 --- !u!4 &1793697363 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 494596, guid: 8ced8772a0380c643a2733f587421c1c,

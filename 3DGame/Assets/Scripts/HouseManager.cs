@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class HouseManager : MonoBehaviour
 {
@@ -14,6 +15,16 @@ public class HouseManager : MonoBehaviour
     public float shakePower = 2;
     [Header("攝影機")]
     public Transform myCamera;
+    [Header("檢查遊戲失敗")]
+    public Transform checkWall;
+    [Header("遊戲結算")]
+    public GameObject final;
+    [Header("房子數量文字介面")]
+    public Text textHouseCount;
+    [Header("最佳數量文字介面")]
+    public Text textBest;
+    [Header("本次數量文字介面")]
+    public Text textCurrent;
 
     /// <summary>
     /// 用來儲存生成的房子物件
@@ -27,6 +38,14 @@ public class HouseManager : MonoBehaviour
     /// 房子總高度
     /// </summary>
     private float height;
+    /// <summary>
+    /// 第一個房子
+    /// </summary>
+    private Transform firstHouse;
+    /// <summary>
+    /// 房子總數
+    /// </summary>
+    private int count;
 
     private void Start()
     {
@@ -57,9 +76,20 @@ public class HouseManager : MonoBehaviour
     {
         tempHouse.transform.SetParent(null);
         tempHouse.GetComponent<Rigidbody>().isKinematic = false;
+        tempHouse.GetComponent<House>().down = true;
         Invoke("CreateHouse", 1);
         startHouse = true;
         height += tempHouse.GetComponent<BoxCollider>().size.y * tempHouse.transform.localScale.y;
+
+        if (!firstHouse)
+        {
+            firstHouse = tempHouse.transform;
+            Invoke("CreateCheckWall", 1.2f);
+            Destroy(firstHouse.GetComponent<House>());
+        }
+
+        count++;
+        textHouseCount.text = "房子數量：" + count;
     }
 
     private void Update()
@@ -81,5 +111,28 @@ public class HouseManager : MonoBehaviour
             Vector3 posSus = new Vector3(0, height + 6, 0);
             pointSuspention.position = Vector3.Lerp(pointSuspention.position, posSus, 0.3f * 10 * Time.deltaTime);
         }
+    }
+
+    /// <summary>
+    /// 建立檢查遊戲失敗牆壁
+    /// </summary>
+    private void CreateCheckWall()
+    {
+        Instantiate(checkWall, firstHouse.position, Quaternion.identity);
+    }
+
+    /// <summary>
+    /// 遊戲結束：顯示結算畫面
+    /// </summary>
+    public void GameOver()
+    {
+        final.SetActive(true);
+
+        textCurrent.text = "本次數量：" + count;
+
+        if (count > PlayerPrefs.GetInt("最佳數量"))
+            PlayerPrefs.SetInt("最佳數量", count);
+
+        textBest.text = "最佳數量：" + PlayerPrefs.GetInt("最佳數量");
     }
 }
