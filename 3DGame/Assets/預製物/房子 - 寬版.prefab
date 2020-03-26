@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7895023299432437928}
   - component: {fileID: 7895023299432437929}
   - component: {fileID: -7412902699005287350}
+  - component: {fileID: -726306445553731379}
   m_Layer: 0
   m_Name: "\u623F\u5B50 - \u5BEC\u7248"
-  m_TagString: Untagged
+  m_TagString: "\u623F\u5B50"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,3 +125,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   down: 0
+--- !u!114 &-726306445553731379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7895023298875460092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21f309e4fb1e464c8862a75a70ad42b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundHit: {fileID: 8300000, guid: f0229c7bd5b1f654892bfc200183e9a7, type: 3}

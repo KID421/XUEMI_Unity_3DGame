@@ -25,6 +25,12 @@ public class HouseManager : MonoBehaviour
     public Text textBest;
     [Header("本次數量文字介面")]
     public Text textCurrent;
+    [Header("生成房子音效")]
+    public AudioClip soundCreateHouse;
+    [Header("蓋房子音樂")]
+    public AudioClip soundBGMStart;
+    [Header("遊戲結束音樂")]
+    public AudioClip soundBGMGameOver;
 
     /// <summary>
     /// 用來儲存生成的房子物件
@@ -46,9 +52,15 @@ public class HouseManager : MonoBehaviour
     /// 房子總數
     /// </summary>
     private int count;
+    /// <summary>
+    /// 音效管理器
+    /// </summary>
+    private SoundManager soundManager;
 
     private void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
+        soundManager.PlayBGM(soundBGMStart, true);
         CreateHouse();
         InvokeRepeating("Shake", 0, 3);
     }
@@ -59,6 +71,7 @@ public class HouseManager : MonoBehaviour
     private void CreateHouse()
     {
         tempHouse = Instantiate(houses[0], pointShake);
+        soundManager.PlaySound(soundCreateHouse);
     }
 
     /// <summary>
@@ -134,5 +147,7 @@ public class HouseManager : MonoBehaviour
             PlayerPrefs.SetInt("最佳數量", count);
 
         textBest.text = "最佳數量：" + PlayerPrefs.GetInt("最佳數量");
+
+        soundManager.PlayBGM(soundBGMGameOver, false);
     }
 }
