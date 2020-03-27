@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
     /// </summary>
     private AudioSource aud;
 
-    private void Start()
+    private void Awake()
     {
         // 音效來源 = 取得元件<音效來源>()
         aud = GetComponent<AudioSource>();
