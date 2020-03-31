@@ -56,6 +56,10 @@ public class HouseManager : MonoBehaviour
     /// 音效管理器
     /// </summary>
     private SoundManager soundManager;
+    /// <summary>
+    /// 遊戲結束
+    /// </summary>
+    private bool gameOver;
 
     private void Start()
     {
@@ -70,8 +74,14 @@ public class HouseManager : MonoBehaviour
     /// </summary>
     private void CreateHouse()
     {
-        tempHouse = Instantiate(houses[0], pointShake);
         soundManager.PlaySound(soundCreateHouse);
+
+        if (count < 5)
+            tempHouse = Instantiate(houses[0], pointShake);
+        else if (count < 10)
+            tempHouse = Instantiate(houses[1], pointShake);
+        else
+            tempHouse = Instantiate(houses[2], pointShake);
     }
 
     /// <summary>
@@ -87,6 +97,8 @@ public class HouseManager : MonoBehaviour
     /// </summary>
     public void HouseDown()
     {
+        if (gameOver || !tempHouse) return;
+
         tempHouse.transform.SetParent(null);
         tempHouse.GetComponent<Rigidbody>().isKinematic = false;
         tempHouse.GetComponent<House>().down = true;
@@ -103,6 +115,7 @@ public class HouseManager : MonoBehaviour
 
         count++;
         textHouseCount.text = "房子數量：" + count;
+        tempHouse = null;
     }
 
     private void Update()
@@ -139,6 +152,9 @@ public class HouseManager : MonoBehaviour
     /// </summary>
     public void GameOver()
     {
+        if (gameOver) return;
+        gameOver = true;
+
         final.SetActive(true);
 
         textCurrent.text = "本次數量：" + count;

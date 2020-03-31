@@ -241,6 +241,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d68ef7a2a7a25ca499eb4d0024f2ff0d, type: 3}
+--- !u!1001 &155339630
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4493051808352645255, guid: 3b85a59c61ef59e4b950de8674ff8dde,
+        type: 3}
+      propertyPath: m_Name
+      value: "\u904A\u6232\u7BA1\u7406\u5668"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493051808352645273, guid: 3b85a59c61ef59e4b950de8674ff8dde,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493051808352645273, guid: 3b85a59c61ef59e4b950de8674ff8dde,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493051808352645273, guid: 3b85a59c61ef59e4b950de8674ff8dde,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493051808352645273, guid: 3b85a59c61ef59e4b950de8674ff8dde,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493051808352645273, guid: 3b85a59c61ef59e4b950de8674ff8dde,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493051808352645273, guid: 3b85a59c61ef59e4b950de8674ff8dde,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493051808352645273, guid: 3b85a59c61ef59e4b950de8674ff8dde,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493051808352645273, guid: 3b85a59c61ef59e4b950de8674ff8dde,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493051808352645273, guid: 3b85a59c61ef59e4b950de8674ff8dde,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493051808352645273, guid: 3b85a59c61ef59e4b950de8674ff8dde,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493051808352645273, guid: 3b85a59c61ef59e4b950de8674ff8dde,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b85a59c61ef59e4b950de8674ff8dde, type: 3}
+--- !u!114 &155339631 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4493051808352645254, guid: 3b85a59c61ef59e4b950de8674ff8dde,
+    type: 3}
+  m_PrefabInstance: {fileID: 155339630}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b225ca6a9b47eef449982bc56901716d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &179851170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1040,6 +1121,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 8300000, guid: 517956be62b8fe24e898744ab3c87e10,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 155339631}
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2595,9 +2687,9 @@ MonoBehaviour:
   pointShake: {fileID: 185205960}
   pointShakeRig: {fileID: 185205959}
   houses:
-  - {fileID: 8453611640197947882, guid: 32d50f3dac5389945884b2a27b77d51c, type: 3}
-  - {fileID: 7895023298875460092, guid: 8c832133e22af8041a19874d588369bd, type: 3}
   - {fileID: 9096967193401724487, guid: 8ba68a8d077afde4285a9942e4fc6aa0, type: 3}
+  - {fileID: 7895023298875460092, guid: 8c832133e22af8041a19874d588369bd, type: 3}
+  - {fileID: 8453611640197947882, guid: 32d50f3dac5389945884b2a27b77d51c, type: 3}
   shakePower: 2
   myCamera: {fileID: 705449617}
   checkWall: {fileID: 2456561169514279841, guid: 0509b09fb1d27d148bf9e50b74646661,
@@ -2806,6 +2898,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 155339631}
+        m_MethodName: Replay
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u84CB\u623F\u5B50"
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1888940547
